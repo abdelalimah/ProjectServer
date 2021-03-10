@@ -1,0 +1,19 @@
+<!ELEMENT liste (livre+)>
+<!ELEMENT livre (titre,auteurs,editeur,date-edition,theme,resumes*,image,fichiers*)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteurs (auteur+)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT editeur (#PCDATA)>
+<!ELEMENT date-edition (#PCDATA)>
+<!ELEMENT theme (#PCDATA)>
+<!ELEMENT resumes (resume+)>
+<!ELEMENT resume (#PCDATA)>
+<!ELEMENT image EMPTY>
+<!ELEMENT fichiers (fichier)>
+<!ELEMENT fichier (#PCDATA)>
+
+
+<!ATTLIST livre code ID #REQUIRED>
+<!ATTLIST resume langue CDATA "Ar" >
+<!ATTLIST image source CDATA #REQUIRED>
+<!ATTLIST fichier chemin CDATA #REQUIRED>
