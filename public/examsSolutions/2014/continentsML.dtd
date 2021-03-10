@@ -1,8 +1,0 @@
-<!ELEMENT nom (#PCDATA)>
-<!ELEMENT population (#PCDATA)>
-<!ELEMENT pays (nom,population+)>
-<!ELEMENT Continent (nom,pays+)>
-<!ELEMENT Continents (Continent+)>
-<!ATTLIST pays Code ID #REQUIRED>
-<!ATTLIST population année CDATA #REQUIRED>
-<!ATTLIST population unité CDATA #REQUIRED>

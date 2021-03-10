@@ -1,20 +1,23 @@
-const http = require("http");
+const express = require("express");
+const app = express();
 const path = require("path");
-const static = require("node-static");
+const baseConfig = require("../config/index");
+const dao = require("../dao/index");
+const studentsRouter = require("./students/index");
 
-const file = new static.Server(path.resolve("public"));
+app.use(express.static(path.resolve("public")));
+app.use(express.static(path.resolve("views")));
 
-function requestHandler(req, res) {
-  file.serve(req, res);
-  if (req.url == "/blah") {
-    res.end("here is your blah mister !");
-  }
-}
-const server = http.createServer(requestHandler);
-const port = process.env.PORT || 3000;
-
-server.listen(port);
-
-server.on("listening", function () {
-  console.log(`Listening on port ${port}`);
+app.get("/",(req,res) => {
+  res.sendFile(path.resolve("public","index.xml"));
 });
+
+app.use("/students",studentsRouter);
+app.use("/students/student/:id",studentsRouter);
+
+app.use("*",(req,res) => {
+  res.send("There is no such resource")
+});
+
+const port = process.env.PORT || baseConfig.port;
+app.listen(port,() => console.log(`Listening on port ${port}`));

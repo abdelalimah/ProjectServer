@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT guestbooks (guest+)>
-<!ELEMENT guest (fname,lname+)>
-<!ELEMENT fname (#PCDATA)>
-<!ELEMENT lname (#PCDATA)>
-<!ATTLIST guest id CDATA #REQUIRED>
-<!ATTLIST guest city (fes | oujda | casablanca) "fes">
