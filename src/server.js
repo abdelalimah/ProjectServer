@@ -13,7 +13,7 @@ app.use(express.static(path.resolve("public")));
 app.use(express.static(path.resolve("views")));
 
 app.get("/",(req,res) => {
-  res.sendFile(path.resolve("public","students.xml"));
+  res.sendFile(path.resolve("public","index.xml"));
 });
 
 app.use("/students",studentsRouter);

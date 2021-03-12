@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="/students.xsl" type="text/xsl"?>
 <students>
-    <student cne="blah" cin="FL9879812">
-        <name>drissi</name>
-        <nickname>hassan</nickname>
-        <age>41</age>
+    
+    
+    <student cne="FL00210">
+        <name>lorem2</name>
+        <nickname>lorem2</nickname>
+        <age>02</age>
     </student>
-    <student cne="FL9895" cin="H1448073">
-        <name>el jabiry</name>
-        <nickname>ihsane</nickname>
-        <age>24</age>
-    </student>
-    <student cne="FL9899" cin="H1448073">
-        <name>el jabiry</name>
-        <nickname>ihsane</nickname>
-        <age>24</age>
+    
+    
+    <student cne="FL00510">
+        <name>lorem2</name>
+        <nickname>lorem2</nickname>
+        <age>05</age>
     </student>
 </students>

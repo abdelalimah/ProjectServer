@@ -9,8 +9,8 @@ router.get("/",(req,res) => {
   .get("/:slug",(req,res) => {
     res.send(req.params.slug+" "+req.query.search_by);
   })
-  .put("/",updateStudent)
+  .put("/:cne",updateStudent)
   .post("/",addStudent)
-  .delete("/",deleteStudent)
+  .delete("/:cne",deleteStudent)
 
 module.exports = router

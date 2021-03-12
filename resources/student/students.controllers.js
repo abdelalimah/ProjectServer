@@ -45,11 +45,11 @@ module.exports = {
     );
   },
   deleteStudent(req, res) {
-    const cne = req.body.cne;
+    const cne = req.params.cne;
     deleteStudent(cne, function (newDocument,isStudentDeleted) {
       writeToFile(basePath, newDocument);
       if(isStudentDeleted){
-        res.status(200).send("XML file updated successfuly");
+        res.status(200).sendFile(basePath);
         return;
       }
       res.status(404).send("There was an error while deleting the student");
