@@ -1,11 +1,11 @@
-?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
 <xsd:element name="name" type="xsd:string"/>
 <xsd:element name="nickname" type="xsd:string"/>
 <xsd:element name="age" type="ageType"/>
 <xsd:element name="image" type="imageType"/>
-<xds:element name="student" type="studentType"/>
+<xsd:element name="student" type="studentType"/>
 
 
 <xsd:complexeType name="imageType">
