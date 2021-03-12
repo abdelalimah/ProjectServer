@@ -1,13 +1,17 @@
 class Student {
-    constructor(id,name,nickname,age){
-        this.id = id;
+    constructor(cne,cin,name,nickname,age){
+        this.cne = cne;
+        this.cin = cin;
         this.name = name;
         this.nickname = nickname;
         this.age = age;
     }
 
-    getId(){
-        return this.id;
+    getCne(){
+        return this.cne;
+    }
+    getCin(){
+        return this.cin;
     }
     getName(){
         return this.name;

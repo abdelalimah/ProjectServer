@@ -5,7 +5,6 @@ class XMLNode {
     }
     
     extractChildren(){
-        
         let nodeListe = this.node.childNodes;
         let result = [];
         for(let i =0;i < nodeListe.length; i++){
@@ -34,17 +33,18 @@ class XMLNode {
         return null;
     }
 
-    extractChildById(id){
-        let nodeListe = this.node.childNodes;
-        for(let i =0;i < nodeListe.length; i++){
-            if(nodeListe[i].nodeType == 1 && nodeListe[i].getAttribute("id") == id){
-                return new XMLNode(nodeListe[i]);
-            }
-        }
+    // changeContent(newContent){
+    //     let parentNode = this.node.parentNode;
+    //     this.deleteNode();
+    //     parentNode.appendChild(newContent);
+    // }
+
+    setAttribute(attName,attValue){
+        this.node.setAttribute(attName,attValue);
     }
 
-    changeContent(newContent){
-        this.node.firstChild.nodeValue = newContent;
+    appendChild(newNode){
+        this.node.appendChild(newNode);
     }
 
     getNodeName(){
@@ -55,12 +55,12 @@ class XMLNode {
         return this.node.firstChild.nodeValue;
     }
 
-    setDocument(doc){
-        this.doc = doc;
+    deleteNode(){
+        this.node.parentNode.removeChild(this.node);
     }
 
-    getDocument(){
-        return this.doc;
+    replaceNode(newNode){
+        this.node.parentNode.replaceChild(newNode,this.node);
     }
 }
 
