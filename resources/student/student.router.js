@@ -4,7 +4,9 @@ const path = require("path");
 const {updateStudent} = require("./students.controllers.js");
 
 router.get("/",(req,res) => {
-    res.sendFile(path.resolve("db","students.xml"));
+    let loadedStudents = loadStudents();
+
+    res.sendFile(path.resolve("db","index.xml"));
   })
   .get("/:slug",(req,res) => {
     res.send(req.params.slug+" "+req.query.search_by);

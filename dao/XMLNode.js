@@ -25,6 +25,15 @@ class XMLNode {
             }
         }
     }
+
+    extractAttribute(name){
+        let attr = this.node.getAttribute(name);
+        if(attr != null){
+            return attr;
+        }
+        return null;
+    }
+
     extractChildById(id){
         let nodeListe = this.node.childNodes;
         for(let i =0;i < nodeListe.length; i++){
@@ -35,17 +44,23 @@ class XMLNode {
     }
 
     changeContent(newContent){
-        console.log("the new content is the following : "+newContent);
         this.node.firstChild.nodeValue = newContent;
-        console.log(this.node.firstChild.nodeValue);
-    }
-
-    getDocument(){
-        return this.getDocument();
     }
 
     getNodeName(){
         return this.node.nodeName;
+    }
+
+    getNodeValue(){
+        return this.node.firstChild.nodeValue;
+    }
+
+    setDocument(doc){
+        this.doc = doc;
+    }
+
+    getDocument(){
+        return this.doc;
     }
 }
 

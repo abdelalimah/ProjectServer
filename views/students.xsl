@@ -3,7 +3,7 @@
     <xsl:template match="/">
         <html>
         <body>
-            <xsl:for-each select="students/student">
+            <xsl:for-each select="/students/student">
             <ul>
                 <li>
                     <xsl:value-of select="name"></xsl:value-of>
