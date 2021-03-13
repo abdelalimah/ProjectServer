@@ -45,6 +45,19 @@
           <script type="text/javascript" src="js/main.js"></script>
 
         <body>
+
+
+                       <div class="input-group">
+               <div class="form-outline">
+    <input id="search-input" type="search" id="form1" class="form-control" />
+         <label class="form-label" for="form1">Chercher</label>
+                </div>
+  <button id="search-button" type="button" class="btn btn-primary">
+               <i class="fas fa-search"></i>
+  </button>
+                        </div>
+
+
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Ajouter
