@@ -2,11 +2,11 @@
 <?xml-stylesheet href="/students.xsl" type="text/xsl"?>
 <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schema/students.xsd" -->
 <students>
-    
 
-    
-    
 
-    
-    
+    <student cne="H144059044" cin="FL85545">
+        <name>mahboub</name>
+        <nickname>abdelali</nickname>
+        <age>21</age>
+    </student>
 </students>
