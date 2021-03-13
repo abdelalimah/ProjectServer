@@ -54,7 +54,19 @@
                   body: JSON.stringify({cne,cin,name,nickname,age})
                 }).then(function(){ 
                   location.reload();
-                  console.log("hello world")
+                 });
+              }
+
+              function updateStudent(){
+                fetch('/students', {
+                  method: 'PUT',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({cne,cin,name,nickname,age})
+                }).then(function(){ 
+                  location.reload();
                  });
               }
 
@@ -146,6 +158,51 @@
                         <xsl:value-of select="@cin" />
                       </p>
                       <a href="#" class="btn btn-primary" onclick="deleteStudent('{@cne}')">Supprimer</a>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+                        Modifier
+                      </button>
+              
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel2">Modifier un étudiant</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"></span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form class="container-fluid">
+                                <div class="row">
+                                  <div class="col">
+                                    <label for="exampleInputEmail1">CNE</label>
+                                    <input id="cne1" type="text" class="form-control" value="{@cne}" />
+                                  </div>
+                                  <div class="col">
+                                    <label for="exampleInputEmail1">CIN</label>
+                                    <input id="cin1" type="text" class="form-control" />
+                                  </div>
+                                  <div class="col">
+                                    <label for="exampleInputEmail1">Nom</label>
+                                    <input id="name1" type="text" class="form-control" />
+                                  </div>
+                                  <div class="col">
+                                    <label for="exampleInputEmail1">Prénom</label>
+                                    <input id="nickname1" type="text" class="form-control" />
+                                  </div>
+                                  <label for="exampleInputEmail1">Age</label>
+                                  <input type="number" id="age1" name="tentacles" min="18" max="40" />
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                              <button type="button" class="btn btn-primary" onclick="alert('hola')">blah</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
