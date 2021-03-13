@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-
 <xsd:element name="name" type="xsd:string"/>
 <xsd:element name="nickname" type="xsd:string"/>
 <xsd:element name="age" type="ageType"/>
 <xsd:element name="image" type="imageType"/>
 <xsd:element name="student" type="studentType"/>
-
-
-<xsd:complexeType name="imageType">
+<xsd:element name="students" type="studentsType"/>
+<xsd:complexType name="imageType">
 <xsd:attribute name="src" use="required" type="xsd:string"/>
-</xsd:complexeType>
+</xsd:complexType>
 
 
 <xsd:simpleType name="ageType">
@@ -22,7 +20,7 @@
 
 
 
-<xsd:complexeType name="studentType">
+<xsd:complexType name="studentType">
 <xsd:sequence>
 
 <xsd:element ref="name"/>
@@ -31,13 +29,32 @@
 <xsd:element ref="image"/>
 
 </xsd:sequence>
-</xsd:complexeType>
-<xsd:complexeType name="students">
+
+<xsd:attribute name="cne" use="required" >
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="6"/>
+</xsd:restriction>
+</xsd:simpleType>
+
+</xsd:attribute>
+
+<xsd:attribute name="cin" use="required">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="7"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+ 
+</xsd:complexType>
+
+
+
+<xsd:complexType name="studentsType">
 <xsd:sequence>
 <xsd:element ref="student" minOccurs="1" maxOccurs="unbounded"/>
-
-</xsd:complexeType>
-
-
+</xsd:sequence>
+</xsd:complexType>
 
 </xsd:schema>
