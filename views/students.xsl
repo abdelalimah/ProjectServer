@@ -31,51 +31,6 @@
 
 
       </head>
-      <script>
-              function deleteStudent(cne){
-                  fetch(`/students/${cne}`,{
-                      method: 'DELETE'
-                  }).then((res) => console.log(res));
-              }
-
-              function addStudent(){
-                let cne = document.getElementById("cne").value;
-                let cin = document.getElementById("cin").value;
-                let name = document.getElementById("name").value;
-                let nickname = document.getElementById("nickname").value;
-                let age = document.getElementById("age").value;
-                
-                fetch('/students', {
-                  method: 'POST',
-                  headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({cne,cin,name,nickname,age})
-                }).then(function(){ 
-                  location.reload();
-                 });
-              }
-
-              function updateStudent(){
-                fetch('/students', {
-                  method: 'PUT',
-                  headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({cne,cin,name,nickname,age})
-                }).then(function(){ 
-                  location.reload();
-                 });
-              }
-
-          </script>
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-      <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
-      <script type="text/javascript" src="js/main.js"></script>
 
       <body>
         <!-- Button trigger modal -->
@@ -181,24 +136,24 @@
                                   </div>
                                   <div class="col">
                                     <label for="exampleInputEmail1">CIN</label>
-                                    <input id="cin1" type="text" class="form-control" />
+                                    <input id="cin1" type="text" class="form-control" value="{@cin}" />
                                   </div>
                                   <div class="col">
                                     <label for="exampleInputEmail1">Nom</label>
-                                    <input id="name1" type="text" class="form-control" />
+                                    <input id="name1" type="text" class="form-control" value="{name}" />
                                   </div>
                                   <div class="col">
                                     <label for="exampleInputEmail1">Prénom</label>
-                                    <input id="nickname1" type="text" class="form-control" />
+                                    <input id="nickname1" type="text" class="form-control" value="{nickname}" />
                                   </div>
                                   <label for="exampleInputEmail1">Age</label>
-                                  <input type="number" id="age1" name="tentacles" min="18" max="40" />
+                                  <input type="number" id="age1" name="tentacles" min="18" max="40" value="{age}"/>
                                 </div>
                               </form>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                              <button type="button" class="btn btn-primary" onclick="alert('hola')">blah</button>
+                              <button type="button" class="btn btn-primary" onclick="updateStudent()">Enregistrer</button>
                             </div>
                           </div>
                         </div>
@@ -211,6 +166,67 @@
           </div>
         </xsl:for-each>
       </body>
+      <script>
+
+        <!-- making cin and cne readonly for modification -->
+            document.getElementById("cne1").readOnly = true;
+            document.getElementById("cin1").readOnly = true;
+
+            function deleteStudent(cne){
+                let isConfirmed = confirm("Voulez vous vraiment supprimer l'étudiant CNE : "+cne);
+                if(isConfirmed){
+                  fetch(`/students/${cne}`,{
+                    method: 'DELETE'
+                  }).then((res) => location.reload());
+                }
+            }
+
+            function addStudent(){
+              let cne = document.getElementById("cne").value;
+              let cin = document.getElementById("cin").value;
+              let name = document.getElementById("name").value;
+              let nickname = document.getElementById("nickname").value;
+              let age = document.getElementById("age").value;
+              
+              fetch('/students', {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({cne,cin,name,nickname,age})
+              }).then(function(){ 
+                location.reload();
+               });
+            }
+
+            function updateStudent(){
+
+              let cne = document.getElementById("cne1").value;
+              let cin = document.getElementById("cin1").value;
+              let name = document.getElementById("name1").value;
+              let nickname = document.getElementById("nickname1").value;
+              let age = document.getElementById("age1").value;
+
+              fetch(`/students/${cne}`, {
+                method: 'PUT',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({cne,cin,name,nickname,age})
+              }).then(function(){ 
+                location.reload();
+               });
+
+            }
+
+        </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     </html>
   </xsl:template>
 </xsl:stylesheet>
