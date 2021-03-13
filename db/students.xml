@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/students.xsl" type="text/xsl"?>
+<?xml-stylesheet href="/students1.xsl" type="text/xsl"?>
 
 <students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="students.xsd">
 
@@ -7,4 +7,4 @@
 
 
 <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schema/students.xsd" -->
-<student cne="H144059044" cin="FL85545"><name>mahboub</name><nickname>abdelali</nickname><age>21</age></student></students>
+<student cne="H144059044" cin="FL85545"><name>mahboub</name><nickname>abdelali</nickname><age>21</age></student><student cne="2344" cin="6789"><name>soumaya</name><nickname>bahij</nickname><age>19</age></student></students>
