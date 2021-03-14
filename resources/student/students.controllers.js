@@ -1,10 +1,13 @@
-const { updateStudent, addStudent, deleteStudent } = require("../../dao/index");
+const { updateStudent, addStudent, deleteStudent,searchStudent } = require("../../dao/index");
 const Student = require("./student.model");
 const { writeToFile } = require("../../utils/index");
 const path = require("path");
 const basePath = path.resolve("db", "students.xml");
 
 module.exports = {
+  searchStudent(req,res){
+    console.log("m here")
+  },
   updateStudent(req, res) {
     const cne = req.body.cne;
     const cin = req.body.cin;
