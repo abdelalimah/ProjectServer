@@ -10,7 +10,6 @@ router.get("/",(req,res) => {
     res.send(req.params.slug+" "+req.query.search_by);
   })
   .put("/:cne",updateStudent)
-  .post("/:cne",searchStudent)
   .post("/",addStudent)
   .delete("/:cne",deleteStudent)
 

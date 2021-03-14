@@ -802,6 +802,13 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
+node-basex@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/node-basex/-/node-basex-0.0.3.tgz#a835c619ca21948fe6bbe6fc2a7a442765742a19"
+  integrity sha1-qDXGGcohlI/mu+b8KnpEJ2V0Khk=
+  dependencies:
+    node-xmler "^0.1.0"
+
 node-static@^0.7.11:
   version "0.7.11"
   resolved "https://registry.yarnpkg.com/node-static/-/node-static-0.7.11.tgz#60120d349f3cef533e4e820670057eb631882e7f"
@@ -810,6 +817,11 @@ node-static@^0.7.11:
     colors ">=0.6.0"
     mime "^1.2.9"
     optimist ">=0.3.4"
+
+node-xmler@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/node-xmler/-/node-xmler-0.1.1.tgz#a2cf2e6e02f7990b4307383ed9ca44e33c2c7239"
+  integrity sha1-os8ubgL3mQtDBzg+2cpE4zwscjk=
 
 nodemon@^2.0.7:
   version "2.0.7"

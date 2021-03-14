@@ -38,19 +38,9 @@
           Liste des étudiants
         </div>
         <nav class="navbar navbar-light bg-light">
-          <div class="container" style="width: 40%; margin-top: 3%;">
-            <form class="d-flex" action="/students" method="post" >
-              <div class="row">
-                <div class="col">
-                  <input class="form-control me-2" name="cne" type="search" placeholder="Veuillez entrer le CNE de l'étudiant" aria-label="Search" />
-                  <button class="btn btn-outline-success" type="submit" style="margin-top: 5px; margin-right: 5px">Rechercher</button>
-                  <button type="button" class="btn btn-info" style="margin-top: 5px;" data-toggle="modal" data-target="#exampleModal">
+                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
                     Ajouter un nouveau étudiant
                   </button>
-                </div>
-              </div>
-            </form>
-          </div>
         </nav>
 
         <!-- Modal -->
